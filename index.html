@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student Cloud Portal - Demo Login">
+  <title>Student Cloud Portal | Login</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 950px;
+      min-height: 570px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: #ffffff;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.20);
+    }
+
+    .welcome {
+      background: linear-gradient(160deg, #1d4ed8, #4338ca);
+      color: white;
+      padding: 55px 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .logo {
+      width: 68px;
+      height: 68px;
+      border-radius: 18px;
+      background: white;
+      color: #2563eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .welcome h1 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .welcome p {
+      line-height: 1.7;
+      color: #dbeafe;
+      font-size: 16px;
+      max-width: 390px;
+    }
+
+    .features {
+      margin-top: 30px;
+      list-style: none;
+    }
+
+    .features li {
+      margin: 13px 0;
+      color: #eef2ff;
+    }
+
+    .features li::before {
+      content: "✓";
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    .login {
+      padding: 55px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .login h2 {
+      color: #111827;
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #6b7280;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      color: #374151;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 15px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 15px;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+    .password-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .password-row label {
+      margin-bottom: 0;
+    }
+
+    .forgot {
+      color: #2563eb;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .forgot:hover {
+      text-decoration: underline;
+    }
+
+    .login-btn {
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      padding: 14px;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 5px;
+      transition: 0.2s;
+    }
+
+    .login-btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    .demo-note {
+      margin-top: 18px;
+      padding: 12px;
+      border-radius: 9px;
+      background: #eff6ff;
+      color: #1e40af;
+      font-size: 12px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 25px;
+      color: #9ca3af;
+      font-size: 12px;
+    }
+
+    @media (max-width: 750px) {
+      .container {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+      }
+
+      .welcome {
+        padding: 35px 30px;
+      }
+
+      .welcome h1 {
+        font-size: 30px;
+      }
+
+      .features {
+        display: none;
+      }
+
+      .login {
+        padding: 40px 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <section class="welcome">
+      <div class="logo">SC</div>
+
+      <h1>Student Cloud</h1>
+
+      <p>
+        Welcome to your student cloud portal. Access your academic
+        resources, documents, assignments and campus services from one place.
+      </p>
+
+      <ul class="features">
+        <li>Access academic resources</li>
+        <li>Manage assignments and documents</li>
+        <li>View student information</li>
+        <li>Secure and easy-to-use portal</li>
+      </ul>
+    </section>
+
+    <section class="login">
+      <h2>Welcome Back</h2>
+      <p class="subtitle">Sign in to your student account</p>
+
+      <form id="loginForm">
+
+        <div class="form-group">
+          <label for="studentId">Student ID / Email</label>
+          <input
+            type="text"
+            id="studentId"
+            name="studentId"
+            placeholder="Enter your student ID"
+            autocomplete="username"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <div class="password-row">
+            <label for="password">Password</label>
+            <a href="#" class="forgot" onclick="forgotPassword(event)">
+              Forgot password?
+            </a>
+          </div>
+
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+
+        <button type="submit" class="login-btn">
+          Sign In
+        </button>
+
+      </form>
+
+      <div class="demo-note">
+        Demo portal: this page does not transmit or store login credentials.
+      </div>
+
+      <div class="footer">
+        © 2026 Student Cloud Portal • Demo Website
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const studentId = document.getElementById("studentId").value.trim();
+
+      if (studentId) {
+        alert("Demo login successful! Connect this form to your own authentication backend before using real accounts.");
+      }
+    });
+
+    function forgotPassword(event) {
+      event.preventDefault();
+      alert("Please contact your college administrator to reset your password.");
+    }
+  </script>
+
+</body>
+</html>
